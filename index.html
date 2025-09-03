@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório de Plantão Noturno - Nova Rio</title>
+    <title>Relatório de Plantão Diurno - Nova Rio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -495,9 +495,6 @@
             .header::before {
                 display: none;
             }
-            .iluminacao-table {
-                page-break-inside: avoid;
-            }
             /* Correção para manter os plantonistas na mesma linha na impressão */
             .plantonistas-section {
                 display: flex !important;
@@ -524,10 +521,6 @@
             .plantonista-value input {
                 font-size: 0.8rem !important;
                 min-width: 120px !important;
-            }
-            .iluminacao-table input {
-                border: 1px solid #ccc !important;
-                background: transparent !important;
             }
             .calculation-info {
                 display: none;
@@ -566,85 +559,6 @@
             .info-group {
                 min-width: auto;
             }
-            .iluminacao-table {
-                overflow-x: auto;
-            }
-        }
-        /* Estilos para a tabela de iluminação pública */
-        .iluminacao-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            border: 1px solid #cbd5e0;
-            border-radius: 4px;
-            max-height: 300px;
-            overflow-y: auto;
-            display: block;
-            font-size: 11px;
-        }
-        .iluminacao-table thead {
-            background: #3498db;
-            color: white;
-            position: sticky;
-            top: 0;
-        }
-        .iluminacao-table th, .iluminacao-table td {
-            padding: 4px 3px;
-            text-align: center;
-            border: 1px solid #cbd5e0;
-        }
-        .iluminacao-table th {
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-        .iluminacao-table td {
-            background: #fff;
-            text-align: left;
-        }
-        .iluminacao-table input {
-            width: 100%;
-            padding: 3px;
-            border: 1px solid #cbd5e0;
-            border-radius: 4px;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-        .iluminacao-table input:focus {
-            outline: 2px solid #3498db;
-        }
-        .iluminacao-table tr:nth-child(even) td {
-            background: #f8fafc;
-        }
-        .iluminacao-summary {
-            margin-top: 10px;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .summary-item {
-            background: #e3f2fd;
-            padding: 8px 12px;
-            border-radius: 4px;
-            border: 1px solid #bbdefb;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        .summary-value {
-            color: #1976d2;
-            font-weight: 700;
-        }
-        .calc-btn {
-            background: #3498db;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            padding: 3px 8px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            margin-top: 5px;
-        }
-        .calc-btn:hover {
-            background: #2980b9;
         }
         /* Novos estilos para autenticação */
         .auth-container {
@@ -794,7 +708,7 @@
                 <img src="https://novario.com.br/wp-content/uploads/2024/06/novario-logo.png" alt="Logo Nova Rio" style="height: 60px; display: block;">
                 <div style="text-align: center;">
                     <div class="logo">NOVA RIO - COGIC - FIOCRUZ</div>
-                    <div class="report-title">Relatório de Plantão Noturno</div>
+                    <div class="report-title">Relatório de Plantão Diurno</div>
                 </div>
                 <img src="https://www.cogic.fiocruz.br/wp-content/uploads/2024/05/logo_site_novo_final.jpg" alt="Logo Fiocruz" style="height: 60px; display: block;">
             </div>
@@ -804,15 +718,15 @@
                     <div class="info-value">
                         <input type="text" placeholder="Data" value="28/06/25" id="startDate" readonly>
                         <input type="text" placeholder="Dia" value="SAB" id="startDay" readonly>
-                        <input type="text" placeholder="Horário" value="19:00 h" id="startTime" readonly>
+                        <input type="text" placeholder="Horário" value="07:00 h" id="startTime" readonly>
                     </div>
                 </div>
                 <div class="info-group">
                     <div class="info-label">📅 FINAL DO PLANTÃO</div>
                     <div class="info-value">
-                        <input type="text" placeholder="Data" value="29/06/25" id="endDate" readonly>
-                        <input type="text" placeholder="Dia" value="DOM" id="endDay" readonly>
-                        <input type="text" placeholder="Horário" value="07:00 h" id="endTime" readonly>
+                        <input type="text" placeholder="Data" value="28/06/25" id="endDate" readonly>
+                        <input type="text" placeholder="Dia" value="SAB" id="endDay" readonly>
+                        <input type="text" placeholder="Horário" value="19:00 h" id="endTime" readonly>
                     </div>
                 </div>
             </div>
@@ -861,7 +775,7 @@
                         <div class="plantonista-item">
                             <div class="plantonista-label"></div>
                             <div class="plantonista-value">
-                                <input type="text" value="076 - CLEBER GONÇALVES" id="ofIialEletrica2">
+                                <input type="text" value="076 - CLEBER GONÇALVES" id="oficialEletrica2">
                             </div>
                         </div>
                         <div class="plantonista-item">
@@ -930,21 +844,21 @@
                             <div class="item-content">
                                 <div class="temp-grid">
                                     <div class="temp-item">
-                                        <div class="temp-label">20h</div>
+                                        <div class="temp-label">08h</div>
                                         <div class="temp-value">
-                                            <input type="text" value="17,8°C" id="temp20h">
+                                            <input type="text" value="17,8°C" id="temp08h">
                                         </div>
                                     </div>
                                     <div class="temp-item">
-                                        <div class="temp-label">00h</div>
+                                        <div class="temp-label">12h</div>
                                         <div class="temp-value">
-                                            <input type="text" value="17,7°C" id="temp00h">
+                                            <input type="text" value="17,7°C" id="temp12h">
                                         </div>
                                     </div>
                                     <div class="temp-item">
-                                        <div class="temp-label">06h</div>
+                                        <div class="temp-label">18h</div>
                                         <div class="temp-value">
-                                            <input type="text" value="17,6°C" id="temp06h">
+                                            <input type="text" value="17,6°C" id="temp18h">
                                         </div>
                                     </div>
                                 </div>
@@ -953,234 +867,10 @@
                         <div class="section-item">
                             <div class="item-header">
                                 <div class="item-number">3.</div>
-                                <div class="item-title">💡 INSPEÇÃO ILUM. PÚBLICA:</div>
+                                <div class="item-title">📝 INSPEÇÕES DE ROTINA:</div>
                             </div>
                             <div class="item-content">
-                                <div class="om-field">
-                                    <div class="om-label">OMS (PREDITIVA):</div>
-                                    <input type="text" value="OM 94081" id="omIluminacao" style="width: 120px;">
-                                </div>
-                                <table class="iluminacao-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Trecho</th>
-                                            <th>Total Lum.</th>
-                                            <th>Apagadas</th>
-                                            <th>Observações</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="iluminacao-body">
-                                        <tr>
-                                            <td>1.01 Trecho 01 - Rua principal entre a Portaria Leopoldo Bulhões até COGIC (Rua Belisário Penna)</td>
-                                            <td><input type="number" min="0" id="lum-total-1" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-1" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-1" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.02 Trecho 02 - Rua Beira Rio (Rua Astrogildo Machado)</td>
-                                            <td><input type="number" min="0" id="lum-total-2" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-2" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-2" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.03 Trecho 03 - Rua principal entre a Recepção do Museu da vida até o castelo (Rua Tito Arco verde)</td>
-                                            <td><input type="number" min="0" id="lum-total-3" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-3" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-3" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.04 Trecho 04 - Rua principal entre Projeto Elsa até Lêonidas Deane</td>
-                                            <td><input type="number" min="0" id="lum-total-4" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-4" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-4" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.05 Trecho 05 - Rua principal entre a Creche Bertha Luthz até Lauro Travassos</td>
-                                            <td><input type="number" min="0" id="lum-total-5" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-5" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-5" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.06 Trecho 06 - Rua principal portaria Castro Tavares até ASFOC</td>
-                                            <td><input type="number" min="0" id="lum-total-6" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-6" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-6" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.07 Trecho 07 - Entorno do Arthur Neiva até Procuradoria (Rua Ângelo Moreira Costa Lima)</td>
-                                            <td><input type="number" min="0" id="lum-total-7" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-7" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-7" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.08 Trecho 08 - Rua principal entre o Rocha Lima até o Multimeios</td>
-                                            <td><input type="number" min="0" id="lum-total-8" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-8" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-8" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.09 Trecho 09 - Rua principal da Hanseniase até paralelo a Biblioteca (Rua Tito Arco verde)</td>
-                                            <td><input type="number" min="0" id="lum-total-9" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-9" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-9" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.10 Trecho 10 - Rua principal da Hanseníase até Biomanguinhos (Rua Alcides Godoy)</td>
-                                            <td><input type="number" min="0" id="lum-total-10" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-10" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-10" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.11 Trecho 11 - Pavilhão 26 Leônidas Deane até o Rocha Lima</td>
-                                            <td><input type="number" min="0" id="lum-total-11" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-11" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-11" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.12 Trecho 12 - Rua paralela a ENSP até a Portaria 01- Sizenando Nabuco</td>
-                                            <td><input type="number" min="0" id="lum-total-12" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-12" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-12" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.13 Trecho 13 - Rua entre Residência oficial até o Gomes de Faria (Rua barão Pedro Afonso)</td>
-                                            <td><input type="number" min="0" id="lum-total-13" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-13" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-13" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.14 Trecho 14 - Rua paralela a COGIC até a Beira Rio</td>
-                                            <td><input type="number" min="0" id="lum-total-14" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-14" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-14" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.15 Trecho 15 - Rua entre o Horto até the Cesteh</td>
-                                            <td><input type="number" min="0" id="lum-total-15" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-15" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-15" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.16 Trecho 16 - Rua principal entre o Pombal até la Banca de jornal ( Rua Emanoel Dias)</td>
-                                            <td><input type="number" min="0" id="lum-total-16" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-16" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-16" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.17 Trecho 17 - Rua entre o Pombal até a Vila Residencial</td>
-                                            <td><input type="number" min="0" id="lum-total-17" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-17" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-17" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.18 Trecho 18 - Rua principal da Portaria da Av. Brasil até o Trenzinho</td>
-                                            <td><input type="number" min="0" id="lum-total-18" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-18" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-18" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.19 Trecho 19 - Rua principal do Trenzinho até o Castelo (Alameda Oswaldo Cruz)</td>
-                                            <td><input type="number" min="0" id="lum-total-19" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-19" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-19" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.20 Trecho 20 - Entorno da EPSJV</td>
-                                            <td><input type="number" min="0" id="lum-total-20" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-20" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-20" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.21 Trecho 21 - Entorno do INI</td>
-                                            <td><input type="number" min="0" id="lum-total-21" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-21" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-21" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.22 Trecho 22- Entorno do INCQS e CDTS</td>
-                                            <td><input type="number" min="0" id="lum-total-22" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-22" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-22" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.23 Trecho 23 - Entorno da Residência Oficial</td>
-                                            <td><input type="number" min="0" id="lum-total-23" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-23" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-23" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.24 Trecho 24 - Entorno da Vila Residencial</td>
-                                            <td><input type="number" min="0" id="lum-total-24" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-24" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-24" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.25 Trecho 25 - Entorno da Biblioteca</td>
-                                            <td><input type="number" min="0" id="lum-total-25" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-25" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-25" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.26 Trecho 26 - Entorno do Campo de Futebol</td>
-                                            <td><input type="number" min="0" id="lum-total-26" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-26" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-26" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.27 Trecho 27 - Estacionamento e entorno das oficinas COGIC</td>
-                                            <td><input type="number" min="0" id="lum-total-27" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-27" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-27" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.28 Trecho 28 - Estacionamento Nust</td>
-                                            <td><input type="number" min="0" id="lum-total-28" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-28" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-28" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.29 Trecho 29 - Estacionamento Carlos Chagas</td>
-                                            <td><input type="number" min="0" id="lum-total-29" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-29" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-29" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.30 Trecho 30 - Refletores atrás do pavilhão 34</td>
-                                            <td><input type="number" min="0" id="lum-total-30" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-30" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-30" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.31 Trecho 31 - Rotatória da ENSP</td>
-                                            <td><input type="number" min="0" id="lum-total-31" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-31" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-31" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.32 Trecho 32 - Holofotes da subestação da ENSP</td>
-                                            <td><input type="number" min="0" id="lum-total-32" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-32" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-32" placeholder="Observações"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1.33 Trecho 33 - Atrás da Ensp</td>
-                                            <td><input type="number" min="0" id="lum-total-33" value="0" class="iluminacao-input"></td>
-                                            <td><input type="number" min="0" id="lum-apagadas-33" value="0" class="iluminacao-input"></td>
-                                            <td><input type="text" id="lum-obs-33" placeholder="Observações"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="iluminacao-summary">
-                                    <div class="summary-item">
-                                        Total de Luminárias: <span class="summary-value" id="total-luminarias">0</span>
-                                    </div>
-                                    <div class="summary-item">
-                                        Luminárias Apagadas: <span class="summary-value" id="total-apagadas">0</span>
-                                    </div>
-                                    <div class="summary-item">
-                                        Percentual Funcionando: <span class="summary-value" id="percentual-funcionando">100%</span>
-                                    </div>
-                                </div>
+                                <textarea style="width: 100%; padding: 8px; border: 1px solid #cbd5e0; border-radius: 4px; font-size: 0.9rem; min-height: 60px; resize: vertical; background: #fff;" id="inspecoesRotinaCogic" placeholder="Digite as inspeções de rotina realizadas..."></textarea>
                             </div>
                         </div>
                         <div class="section-item">
@@ -1189,7 +879,7 @@
                                 <div class="item-title">📝 OBSERVAÇÕES / OCORRÊNCIAS:</div>
                             </div>
                             <div class="item-content">
-                                <textarea style="width: 100%; padding: 8px; border: 1px solid #cbd5e0; border-radius: 4px; font-size: 0.9rem; min-height: 60px; resize: vertical; background: #fff;" id="observacoesEletricaManguinhos" placeholder="Digite suas observações aqui..."></textarea>
+                                <textarea style="width: 100%; padding: 8px; border: 1px solid #cbd5e0; border-radius: 4px; font-size: 0.9rem; min-height: 60px; resize: vertical; background: #fff;" id="observacoesEletricaCogic" placeholder="Digite suas observações aqui..."></textarea>
                             </div>
                         </div>
                     </div>
@@ -1212,13 +902,13 @@
                                 <div class="item-title">ELEVATORIA AV. BRASIL</div>
                             </div>
                             <div class="data-grid">
-                                <div class="data-header">20h</div>
-                                <div class="data-header">00h</div>
-                                <div class="data-header">06h</div>
+                                <div class="data-header">08h</div>
+                                <div class="data-header">12h</div>
+                                <div class="data-header">18h</div>
                                 <div class="data-header"></div>
-                                <div class="data-item"><input type="text" value="BAIXO" id="elevatoria20h"></div>
-                                <div class="data-item"><input type="text" value="BAIXO" id="elevatoria00h"></div>
-                                <div class="data-item"><input type="text" value="BAIXO" id="elevatoria06h"></div>
+                                <div class="data-item"><input type="text" value="BAIXO" id="elevatoria08h"></div>
+                                <div class="data-item"><input type="text" value="BAIXO" id="elevatoria12h"></div>
+                                <div class="data-item"><input type="text" value="BAIXO" id="elevatoria18h"></div>
                                 <div class="data-item"></div>
                             </div>
                         </div>
@@ -1246,17 +936,17 @@
                                 <div class="item-title">HIDROMETRO PORTARIA 02</div>
                             </div>
                             <div class="data-grid">
-                                <div class="data-header">20h</div>
-                                <div class="data-header">00h</div>
-                                <div class="data-header">06h</div>
+                                <div class="data-header">08h</div>
+                                <div class="data-header">12h</div>
+                                <div class="data-header">18h</div>
                                 <div class="data-header">Consumo (m³)</div>
-                                <div class="data-item"><input type="number" step="0.1" value="2854791.9" id="hidrometro20h"></div>
-                                <div class="data-item"><input type="number" step="0.1" value="2854951.5" id="hidrometro00h"></div>
-                                <div class="data-item"><input type="number" step="0.1" value="2855413.5" id="hidrometro06h"></div>
+                                <div class="data-item"><input type="number" step="0.1" value="2854791.9" id="hidrometro08h"></div>
+                                <div class="data-item"><input type="number" step="0.1" value="2854951.5" id="hidrometro12h"></div>
+                                <div class="data-item"><input type="number" step="0.1" value="2855413.5" id="hidrometro18h"></div>
                                 <div class="data-item"><input type="text" value="" id="consumoAgua" readonly></div>
                             </div>
                             <div class="calculation-info">
-                                <strong>Cálculo automático:</strong> Consumo = Leitura 06h - Leitura 20h
+                                <strong>Cálculo automático:</strong> Consumo = Leitura 18h - Leitura 08h
                                 <button class="calc-btn" onclick="calcularConsumoAgua()">Calcular Agora</button>
                             </div>
                         </div>
@@ -1266,13 +956,13 @@
                                 <div class="item-title">CISTERNA 1 MILHÃO</div>
                             </div>
                             <div class="data-grid">
-                                <div class="data-header">20h</div>
-                                <div class="data-header">00h</div>
-                                <div class="data-header">06h</div>
+                                <div class="data-header">08h</div>
+                                <div class="data-header">12h</div>
+                                <div class="data-header">18h</div>
                                 <div class="data-header"></div>
-                                <div class="data-item"><input type="text" value="100%" id="cisterna1_20h"></div>
-                                <div class="data-item"><input type="text" value="100%" id="cisterna1_00h"></div>
-                                <div class="data-item"><input type="text" value="100%" id="cisterna1_06h"></div>
+                                <div class="data-item"><input type="text" value="100%" id="cisterna1_08h"></div>
+                                <div class="data-item"><input type="text" value="100%" id="cisterna1_12h"></div>
+                                <div class="data-item"><input type="text" value="100%" id="cisterna1_18h"></div>
                                 <div class="data-item"></div>
                             </div>
                         </div>
@@ -1282,13 +972,13 @@
                                 <div class="item-title">CISTERNA 900 kL</div>
                             </div>
                             <div class="data-grid">
-                                <div class="data-header">20h</div>
-                                <div class="data-header">00h</div>
-                                <div class="data-header">06h</div>
+                                <div class="data-header">08h</div>
+                                <div class="data-header">12h</div>
+                                <div class="data-header">18h</div>
                                 <div class="data-header"></div>
-                                <div class="data-item"><input type="text" value="100%" id="cisterna2_20h"></div>
-                                <div class="data-item"><input type="text" value="100%" id="cisterna2_00h"></div>
-                                <div class="data-item"><input type="text" value="100%" id="cisterna2_06h"></div>
+                                <div class="data-item"><input type="text" value="100%" id="cisterna2_08h"></div>
+                                <div class="data-item"><input type="text" value="100%" id="cisterna2_12h"></div>
+                                <div class="data-item"><input type="text" value="100%" id="cisterna2_18h"></div>
                                 <div class="data-item"></div>
                             </div>
                         </div>
@@ -1298,13 +988,13 @@
                                 <div class="item-title">PAVILHAO 34 MARIA DEANNE</div>
                             </div>
                             <div class="data-grid">
-                                <div class="data-header">20h</div>
-                                <div class="data-header">00h</div>
-                                <div class="data-header">06h</div>
+                                <div class="data-header">08h</div>
+                                <div class="data-header">12h</div>
+                                <div class="data-header">18h</div>
                                 <div class="data-header"></div>
-                                <div class="data-item"><input type="text" value="100%" id="pavilhao34_20h"></div>
-                                <div class="data-item"><input type="text" value="100%" id="pavilhao34_00h"></div>
-                                <div class="data-item"><input type="text" value="100%" id="pavilhao34_06h"></div>
+                                <div class="data-item"><input type="text" value="100%" id="pavilhao34_08h"></div>
+                                <div class="data-item"><input type="text" value="100%" id="pavilhao34_12h"></div>
+                                <div class="data-item"><input type="text" value="100%" id="pavilhao34_18h"></div>
                                 <div class="data-item"></div>
                             </div>
                         </div>
@@ -1314,19 +1004,19 @@
                                 <div class="item-title">PAVILHAO 26 LEONIDAS DEANNE</div>
                             </div>
                             <div class="data-grid">
-                                <div class="data-header">20h</div>
-                                <div class="data-header">00h</div>
-                                <div class="data-header">06h</div>
+                                <div class="data-header">08h</div>
+                                <div class="data-header">12h</div>
+                                <div class="data-header">18h</div>
                                 <div class="data-header"></div>
-                                <div class="data-item"><input type="text" value="100%" id="pavilhao26_20h"></div>
-                                <div class="data-item"><input type="text" value="100%" id="pavilhao26_00h"></div>
-                                <div class="data-item"><input type="text" value="100%" id="pavilhao26_06h"></div>
+                                <div class="data-item"><input type="text" value="100%" id="pavilhao26_08h"></div>
+                                <div class="data-item"><input type="text" value="100%" id="pavilhao26_12h"></div>
+                                <div class="data-item"><input type="text" value="100%" id="pavilhao26_18h"></div>
                                 <div class="data-item"></div>
                             </div>
                         </div>
                         <div class="section-item">
                             <div class="item-header">
-                                <div class="item-number">3.</div>
+                                <div class="item-number">10.</div>
                                 <div class="item-title">📝 OBSERVAÇÕES / OCORRÊNCIAS:</div>
                             </div>
                             <div class="item-content">
@@ -1346,22 +1036,12 @@
                                 <div class="item-title">📝 INSPEÇÕES DE ROTINA:</div>
                             </div>
                             <div class="item-content">
-                                <input type="text" value="SEM ANORMALIDADES" id="inspecaoHospital">
+                                <textarea style="width: 100%; padding: 8px; border: 1px solid #cbd5e0; border-radius: 4px; font-size: 0.9rem; min-height: 60px; resize: vertical; background: #fff;" id="inspecaoHospital" placeholder="Digite as inspeções de rotina realizadas..."></textarea>
                             </div>
                         </div>
-                        <!-- NOVO ITEM ADICIONADO -->
                         <div class="section-item">
                             <div class="item-header">
                                 <div class="item-number">2.</div>
-                                <div class="item-title">💡 INSPEÇÃO DE ILUMINAÇÃO EXTERNA (ILP):</div>
-                            </div>
-                            <div class="item-content">
-                                <input type="text" placeholder="Detalhes da inspeção de iluminação externa" id="iluminacaoExternaHospital">
-                            </div>
-                        </div>
-                        <div class="section-item">
-                            <div class="item-header">
-                                <div class="item-number">3.</div>
                                 <div class="item-title">📝 OBSERVAÇÕES / OCORRÊNCIAS:</div>
                             </div>
                             <div class="item-content">
@@ -1376,26 +1056,68 @@
                         <div class="section-item">
                             <div class="item-header">
                                 <div class="item-number">1.</div>
-                                <div class="item-title">RES. PRINCIPAL</div>
+                                <div class="item-title">RESERVATÓRIO PRINCIPAL 96 m³</div>
                             </div>
-                            <div class="data-grid">
-                                <div class="data-header">20h</div>
-                                <div class="data-header">06h</div>
-                                <div class="data-header">Consumo (m³)</div>
-                                <div class="data-header">RESERV. PRINCIPAL</div>
-                                <div class="data-item"><input type="number" step="0.1" value="60202.3" id="reservatorio20h"></div>
-                                <div class="data-item"><input type="number" step="0.1" value="60208.6" id="reservatorio06h"></div>
-                                <div class="data-item"><input type="text" value="" id="diferencaReservatorio" readonly></div>
-                                <div class="data-item"><input type="text" value="OK" id="statusReservatorio"></div>
-                            </div>
-                            <div class="calculation-info">
-                                <strong>Cálculo automático:</strong> Consumo = Leitura 06h - Leitura 20h
-                                <button class="calc-btn" onclick="calcularDiferencaReservatorio()">Calcular Agora</button>
+                            <div class="data-grid" style="grid-template-columns: 1fr 1fr;">
+                                <div class="data-header">08h</div>
+                                <div class="data-header">18h</div>
+                                <div class="data-item"><input type="text" placeholder="%" id="reservatorioPrincipal08h"></div>
+                                <div class="data-item"><input type="text" placeholder="%" id="reservatorioPrincipal18h"></div>
                             </div>
                         </div>
                         <div class="section-item">
                             <div class="item-header">
                                 <div class="item-number">2.</div>
+                                <div class="item-title">RESERVATÓRIO 10 m³</div>
+                            </div>
+                            <div class="data-grid" style="grid-template-columns: 1fr 1fr;">
+                                <div class="data-header">08h</div>
+                                <div class="data-header">18h</div>
+                                <div class="data-item"><input type="text" placeholder="%" id="reservatorio10m08h"></div>
+                                <div class="data-item"><input type="text" placeholder="%" id="reservatorio10m18h"></div>
+                            </div>
+                        </div>
+                        <div class="section-item">
+                            <div class="item-header">
+                                <div class="item-number">3.</div>
+                                <div class="item-title">HIDRÔMETRO ENTRADA PRINCIPAL</div>
+                            </div>
+                            <div class="data-grid">
+                                <div class="data-header">08h</div>
+                                <div class="data-header">18h</div>
+                                <div class="data-header">Consumo (m³)</div>
+                                <div class="data-header">AÇÃO</div>
+                                <div class="data-item"><input type="number" step="0.1" placeholder="m³" id="hidrometroEntradaPrincipal08h"></div>
+                                <div class="data-item"><input type="number" step="0.1" placeholder="m³" id="hidrometroEntradaPrincipal18h"></div>
+                                <div class="data-item"><input type="text" value="" id="consumoHidrometroEntradaPrincipal" readonly></div>
+                                <div class="data-item"><button class="calc-btn" onclick="calcularConsumoHidrometroEntradaPrincipal()">Calcular</button></div>
+                            </div>
+                            <div class="calculation-info">
+                                <strong>Cálculo automático:</strong> Consumo = Leitura 18h - Leitura 08h
+                            </div>
+                        </div>
+                        <div class="section-item">
+                            <div class="item-header">
+                                <div class="item-number">4.</div>
+                                <div class="item-title">HIDRÔMETRO SECUNDÁRIO</div>
+                            </div>
+                            <div class="data-grid">
+                                <div class="data-header">08h</div>
+                                <div class="data-header">18h</div>
+                                <div class="data-header">Consumo (m³)</div>
+                                <div class="data-header">AÇÃO</div>
+                                <div class="data-item"><input type="number" step="0.1" placeholder="m³" id="hidrometroSecundario08h"></div>
+                                <div class="data-item"><input type="number" step="0.1" placeholder="m³" id="hidrometroSecundario18h"></div>
+                                <div class="data-item"><input type="text" value="" id="consumoHidrometroSecundario" readonly></div>
+                                <div class="data-item"><button class="calc-btn" onclick="calcularConsumoHidrometroSecundario()">Calcular</button></div>
+                            </div>
+                            <div class="calculation-info">
+                                <strong>Cálculo automático:</strong> Consumo = Leitura 18h - Leitura 08h
+                            </div>
+                        </div>
+                        <div class="section-item">
+                            <div class="item-header">
+                                <div class="item-number">5.</div>
                                 <div class="item-title">📝 OBSERVAÇÕES / OCORRÊNCIAS:</div>
                             </div>
                             <div class="item-content">
@@ -1415,22 +1137,12 @@
                                 <div class="item-title">📝 INSPEÇÕES DE ROTINA:</div>
                             </div>
                             <div class="item-content">
-                                <input type="text" value="SEM ANORMALIDADES" id="inspecaoIff">
+                                <textarea style="width: 100%; padding: 8px; border: 1px solid #cbd5e0; border-radius: 4px; font-size: 0.9rem; min-height: 60px; resize: vertical; background: #fff;" id="inspecaoIff" placeholder="Digite as inspeções de rotina realizadas..."></textarea>
                             </div>
                         </div>
-                        <!-- NOVO ITEM ADICIONADO -->
                         <div class="section-item">
                             <div class="item-header">
                                 <div class="item-number">2.</div>
-                                <div class="item-title">💡 INSPEÇÃO DE ILUMINAÇÃO EXTERNA (ILP):</div>
-                            </div>
-                            <div class="item-content">
-                                <input type="text" placeholder="Detalhes da inspeção de iluminação externa" id="iluminacaoExternaIff">
-                            </div>
-                        </div>
-                        <div class="section-item">
-                            <div class="item-header">
-                                <div class="item-number">3.</div>
                                 <div class="item-title">📝 OBSERVAÇÕES / OCORRÊNCIAS:</div>
                             </div>
                             <div class="item-content">
@@ -1448,35 +1160,49 @@
                                 <div class="item-title">NÍVEIS DOS RESERVATÓRIOS:</div>
                             </div>
                             <div class="item-content">
-                                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 10px; align-items: center; margin-bottom: 10px; font-weight: 600; color: #3498db; border-bottom: 1px solid #e0e0e0; padding-bottom: 5px;">
-                                    <div>RESERVATÓRIO</div>
-                                    <div style="text-align: center;">20h</div>
-                                    <div style="text-align: center;">00h</div>
-                                    <div style="text-align: center;">06h</div>
+                                <div style="margin-bottom: 10px;">
+                                    <div style="font-weight: 600; margin-bottom: 5px;">Mario Olinto - Cisterna:</div>
+                                    <div class="data-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                                        <div class="data-header">08h</div>
+                                        <div class="data-header">13h</div>
+                                        <div class="data-header">18h</div>
+                                        <div class="data-item"><input type="text" placeholder="%" id="marioOlinto08h"></div>
+                                        <div class="data-item"><input type="text" placeholder="%" id="marioOlinto13h"></div>
+                                        <div class="data-item"><input type="text" placeholder="%" id="marioOlinto18h"></div>
+                                    </div>
                                 </div>
-                                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 10px; align-items: center; margin-bottom: 8px;">
-                                    <div>1. Mario Olinto - Cisterna:</div>
-                                    <div><input type="text" value="100%" id="marioOlintoCisterna20h" style="width: 100%; text-align: center;"></div>
-                                    <div><input type="text" value="100%" id="marioOlintoCisterna00h" style="width: 100%; text-align: center;"></div>
-                                    <div><input type="text" value="100%" id="marioOlintoCisterna06h" style="width: 100%; text-align: center;"></div>
+                                <div style="margin-bottom: 10px;">
+                                    <div style="font-weight: 600; margin-bottom: 5px;">Prédio Principal (Hospital) - Cisterna Principal:</div>
+                                    <div class="data-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                                        <div class="data-header">08h</div>
+                                        <div class="data-header">13h</div>
+                                        <div class="data-header">18h</div>
+                                        <div class="data-item"><input type="text" placeholder="%" id="predioHospitalPrincipal08h"></div>
+                                        <div class="data-item"><input type="text" placeholder="%" id="predioHospitalPrincipal13h"></div>
+                                        <div class="data-item"><input type="text" placeholder="%" id="predioHospitalPrincipal18h"></div>
+                                    </div>
                                 </div>
-                                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 10px; align-items: center; margin-bottom: 8px;">
-                                    <div>2. Prédio Principal (Hospital) - Cisterna Principal:</div>
-                                    <div><input type="text" value="100%" id="predioPrincipalCisternaPrincipal20h" style="width: 100%; text-align: center;"></div>
-                                    <div><input type="text" value="100%" id="predioPrincipalCisternaPrincipal00h" style="width: 100%; text-align: center;"></div>
-                                    <div><input type="text" value="100%" id="predioPrincipalCisternaPrincipal06h" style="width: 100%; text-align: center;"></div>
+                                <div style="margin-bottom: 10px;">
+                                    <div style="font-weight: 600; margin-bottom: 5px;">Prédio Principal (Hospital) - Cisterna Secundária:</div>
+                                    <div class="data-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                                        <div class="data-header">08h</div>
+                                        <div class="data-header">13h</div>
+                                        <div class="data-header">18h</div>
+                                        <div class="data-item"><input type="text" placeholder="%" id="predioHospitalSecundaria08h"></div>
+                                        <div class="data-item"><input type="text" placeholder="%" id="predioHospitalSecundaria13h"></div>
+                                        <div class="data-item"><input type="text" placeholder="%" id="predioHospitalSecundaria18h"></div>
+                                    </div>
                                 </div>
-                                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 10px; align-items: center; margin-bottom: 8px;">
-                                    <div>3. Prédio Principal (Hospital) - Cisterna Secundária:</div>
-                                    <div><input type="text" value="100%" id="predioPrincipalCisternaSecundaria20h" style="width: 100%; text-align: center;"></div>
-                                    <div><input type="text" value="100%" id="predioPrincipalCisternaSecundaria00h" style="width: 100%; text-align: center;"></div>
-                                    <div><input type="text" value="100%" id="predioPrincipalCisternaSecundaria06h" style="width: 100%; text-align: center;"></div>
-                                </div>
-                                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 10px; align-items: center; margin-bottom: 8px;">
-                                    <div>4. Prédio da Farmácia - Reservatório Superior:</div>
-                                    <div><input type="text" value="100%" id="predioFarmaciaReservatorio20h" style="width: 100%; text-align: center;"></div>
-                                    <div><input type="text" value="100%" id="predioFarmaciaReservatorio00h" style="width: 100%; text-align: center;"></div>
-                                    <div><input type="text" value="100%" id="predioFarmaciaReservatorio06h" style="width: 100%; text-align: center;"></div>
+                                <div style="margin-bottom: 10px;">
+                                    <div style="font-weight: 600; margin-bottom: 5px;">Prédio da Farmácia - Reservatório Superior:</div>
+                                    <div class="data-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                                        <div class="data-header">08h</div>
+                                        <div class="data-header">13h</div>
+                                        <div class="data-header">18h</div>
+                                        <div class="data-item"><input type="text" placeholder="%" id="predioFarmacia08h"></div>
+                                        <div class="data-item"><input type="text" placeholder="%" id="predioFarmacia13h"></div>
+                                        <div class="data-item"><input type="text" placeholder="%" id="predioFarmacia18h"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1485,19 +1211,34 @@
                                 <div class="item-number">2.</div>
                                 <div class="item-title">HIDRÔMETRO PRINCIPAL:</div>
                             </div>
-                            <div class="data-grid">
-                                <div class="data-header">20h</div>
-                                <div class="data-header">06h</div>
-                                <div class="data-header">Consumo (m³)</div>
-                                <div class="data-header">MANÔMETRO</div>
-                                <div class="data-item"><input type="number" step="0.1" placeholder="Leitura 20h" id="hidrometroIff20h"></div>
-                                <div class="data-item"><input type="number" step="0.1" placeholder="Leitura 06h" id="hidrometroIff06h"></div>
-                                <div class="data-item"><input type="text" value="" id="diferencaHidrometroIff" readonly></div>
-                                <div class="data-item"><input type="text" value="OK" id="statusHidrometroIff"></div>
-                            </div>
-                            <div class="calculation-info">
-                                <strong>Cálculo automático:</strong> Consumo = Leitura 06h - Leitura 20h
-                                <button class="calc-btn" onclick="calcularDiferencaHidrometroIff()">Calcular Agora</button>
+                            <div class="item-content">
+                                <div class="data-grid">
+                                    <div class="data-header">08h</div>
+                                    <div class="data-header">18h</div>
+                                    <div class="data-header">Consumo (m³)</div>
+                                    <div class="data-header">AÇÃO</div>
+                                    <div class="data-item">
+                                        <input type="number" step="0.1" placeholder="m³" id="hidrometroIffPrincipal08h">
+                                    </div>
+                                    <div class="data-item">
+                                        <input type="number" step="0.1" placeholder="m³" id="hidrometroIffPrincipal18h">
+                                    </div>
+                                    <div class="data-item">
+                                        <input type="number" step="0.1" placeholder="m³" id="hidrometroIffPrincipalConsumo" readonly>
+                                    </div>
+                                    <div class="data-item">
+                                        <button class="calc-btn" onclick="calcularConsumoHidrometroIffPrincipal()">Calcular</button>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 10px;">
+                                    <div style="font-weight: 600; margin-bottom: 5px;">MANÔMETRO kgf/cm²:</div>
+                                    <div class="data-grid" style="grid-template-columns: 1fr 1fr;">
+                                        <div class="data-header">08h</div>
+                                        <div class="data-header">18h</div>
+                                        <div class="data-item"><input type="number" step="0.1" placeholder="kgf/cm²" id="manometroIff08h"></div>
+                                        <div class="data-item"><input type="number" step="0.1" placeholder="kgf/cm²" id="manometroIff18h"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="section-item">
@@ -1558,7 +1299,7 @@
             <div class="signature-section">
                 <div class="signature-group">
                     <div class="signature-label">✍️ ENCARREGADO SAINDO DE PLANTÃO</div>
-                    <input type="text" class="signature-input" value="Encarregado de Elétrica (Noturno) Nova Rio" id="assinaturaSaida">
+                    <input type="text" class="signature-input" value="Encarregado de Elétrica (Diurno) Nova Rio" id="assinaturaSaida">
                     <div class="signature-line"></div>
                     <div class="signature-role">Assinatura</div>
                 </div>
@@ -1610,16 +1351,16 @@
                 const now = new Date();
                 let startDate, endDate;
                 
-                if (now.getHours() >= 19) {
-                    // Após 19h: plantão atual (inicia hoje às 19h, termina amanhã às 7h)
+                if (now.getHours() >= 7) {
+                    // Após 7h: plantão atual (inicia hoje às 7h, termina hoje às 19h)
                     startDate = new Date(now);
                     endDate = new Date(now);
-                    endDate.setDate(endDate.getDate() + 1);
                 } else {
-                    // Antes das 19h: plantão anterior (iniciou ontem às 19h, terminou hoje às 7h)
+                    // Antes das 7h: plantão anterior (iniciou ontem às 7h, terminou ontem às 19h)
                     startDate = new Date(now);
                     startDate.setDate(startDate.getDate() - 1);
                     endDate = new Date(now);
+                    endDate.setDate(endDate.getDate() - 1);
                 }
                 
                 const dayNames = ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB'];
@@ -1813,194 +1554,126 @@
             }
             // Função para carregar dados do Firestore
             function loadUserDataFromFirestore(userId) {
+                console.log('Carregando dados do usuário:', userId);
                 db.collection('reports').doc(userId).get()
                     .then((doc) => {
                         if (doc.exists) {
-                            const formData = doc.data();
-                            // Preencher todos os campos (exceto readonly)
-                            for (const id in formData) {
-                                const element = document.getElementById(id);
-                                if (element && id !== 'lastModified' && !element.hasAttribute('readonly')) {
-                                    element.value = formData[id];
+                            const data = doc.data();
+                            console.log('Dados carregados:', Object.keys(data).length, 'campos');
+                            
+                            // Preencher os campos do formulário
+                            Object.keys(data).forEach(key => {
+                                const element = document.getElementById(key);
+                                if (element && key !== 'lastModified' && key !== 'userEmail') {
+                                    element.value = data[key] || '';
                                 }
-                            }
-                            // Atualizar os cálculos
-                            calculateIluminacaoSummary();
-                            calcularConsumoAgua();
-                            calcularDiferencaReservatorio();
-                            calcularDiferencaHidrometroIff();
-                            const notification = document.getElementById('saveNotification');
-                            notification.style.display = 'block';
-                            notification.textContent = 'Dados carregados do servidor!';
+                            });
+                            
+                            // Recalcular valores após carregar
                             setTimeout(() => {
-                                notification.style.display = 'none';
-                            }, 3000);
+                                calcularTodos();
+                            }, 500);
                         } else {
-                            console.log('Nenhum documento encontrado para este usuário.');
+                            console.log('Nenhum dado encontrado para este usuário');
                         }
                     })
                     .catch((error) => {
-                        console.error('Erro ao carregar do Firestore:', error);
+                        console.error('Erro ao carregar dados:', error);
                     });
             }
-            // Função para calcular o resumo da iluminação
-            function calculateIluminacaoSummary() {
-                console.log('Calculando resumo de iluminação...');
-                let totalLuminarias = 0;
-                let totalApagadas = 0;
-                for (let i = 1; i <= 33; i++) {
-                    const totalInput = document.getElementById(`lum-total-${i}`);
-                    const apagadasInput = document.getElementById(`lum-apagadas-${i}`);
-                    if (totalInput && apagadasInput) {
-                        const total = parseInt(totalInput.value) || 0;
-                        const apagadas = parseInt(apagadasInput.value) || 0;
-                        totalLuminarias += total;
-                        totalApagadas += apagadas;
-                        // Garante que apagadas não seja maior que total
-                        if (apagadas > total) {
-                            apagadasInput.value = total;
-                            totalApagadas += (total - apagadas);
-                        }
-                    }
-                }
-                const percentualFuncionando = totalLuminarias > 0 ? 
-                    Math.round(((totalLuminarias - totalApagadas) / totalLuminarias) * 100) : 100;
-                document.getElementById('total-luminarias').textContent = totalLuminarias;
-                document.getElementById('total-apagadas').textContent = totalApagadas;
-                document.getElementById('percentual-funcionando').textContent = `${percentualFuncionando}%`;
-                console.log('Resumo calculado:', {totalLuminarias, totalApagadas, percentualFuncionando});
-            }
-            // Função para calcular o consumo de água (Manguinhos)
-            function calcularConsumoAgua() {
-                console.log('Calculando consumo de água...');
-                try {
-                    const leitura20h = parseFloat(document.getElementById('hidrometro20h').value) || 0;
-                    const leitura06h = parseFloat(document.getElementById('hidrometro06h').value) || 0;
-                    const consumo = leitura06h - leitura20h;
-                    // Formatar o consumo com uma casa decimal и unidade m³
-                    document.getElementById('consumoAgua').value = consumo.toFixed(1).replace('.', ',') + ' m³';
-                    console.log('Consumo calculado:', consumo);
-                    return consumo;
-                } catch (e) {
-                    console.error("Erro ao calcular consumo de água", e);
-                    return 0;
-                }
-            }
-            // Função para calcular diferença no reservatório (Hospital)
-            function calcularDiferencaReservatorio() {
-                console.log('Calculando diferença no reservatório...');
-                try {
-                    const leitura20h = parseFloat(document.getElementById('reservatorio20h').value) || 0;
-                    const leitura06h = parseFloat(document.getElementById('reservatorio06h').value) || 0;
-                    const diferenca = leitura06h - leitura20h;
-                    // Formatar a diferença (agora chamada de consumo) com uma casa decimal и unidade m³
-                    document.getElementById('diferencaReservatorio').value = diferenca.toFixed(1).replace('.', ',') + ' m³';
-                    console.log('Diferença calculada:', diferenca);
-                    return diferenca;
-                } catch (e) {
-                    console.error("Erro ao calcular diferença no reservatório", e);
-                    return 0;
-                }
-            }
-            // Função para calcular diferença no hidrômetro IFF
-            function calcularDiferencaHidrometroIff() {
-                console.log('Calculando diferença no hidrômetro IFF...');
-                try {
-                    const leitura20h = parseFloat(document.getElementById('hidrometroIff20h').value) || 0;
-                    const leitura06h = parseFloat(document.getElementById('hidrometroIff06h').value) || 0;
-                    const diferenca = leitura06h - leitura20h;
-                    // Formatar a diferença com uma casa decimal и unidade m³
-                    document.getElementById('diferencaHidrometroIff').value = diferenca.toFixed(1).replace('.', ',') + ' m³';
-                    console.log('Diferença IFF calculada:', diferenca);
-                    return diferenca;
-                } catch (e) {
-                    console.error("Erro ao calcular diferença no hidrômetro IFF", e);
-                    return 0;
-                }
-            }
-            // Função para calcular todos os valores
-            function calcularTodos() {
-                console.log('Calculando todos os valores...');
-                calculateIluminacaoSummary();
-                const consumo = calcularConsumoAgua();
-                const diferenca = calcularDiferencaReservatorio();
-                const diferencaIff = calcularDiferencaHidrometroIff();
-                const notification = document.getElementById('saveNotification');
-                notification.style.display = 'block';
-                notification.textContent = `Cálculos realizados: Consumo ${consumo.toFixed(1)} m³, Diferença ${diferenca.toFixed(1)} m³, IFF ${diferencaIff.toFixed(1)} m³`;
-                setTimeout(() => {
-                    notification.style.display = 'none';
-                }, 3000);
-                console.log('Todos os cálculos foram realizados');
-            }
-            // Função para atualizar data e hora automaticamente
-            function updateDateTime() {
-                const now = new Date();
-                const dateStr = now.toLocaleDateString('pt-BR', { 
-                    day: '2-digit', 
-                    month: '2-digit', 
-                    year: 'numeric',
-                    weekday: 'long'
-                });
-                const timeStr = now.toLocaleTimeString('pt-BR', { 
-                    hour: '2-digit', 
-                    minute: '2-digit', 
-                    second: '2-digit' 
-                });
-                document.getElementById('currentDateTime').textContent = `${dateStr} - ${timeStr}`;
-            }
-            // Inicialização
+            // Função de inicialização
             function init() {
                 console.log('Inicializando aplicação...');
-                // Carregar dados ao abrir a página
-                calculateIluminacaoSummary();
-                calcularConsumoAgua();
-                calcularDiferencaReservatorio();
-                // Adicionar listeners para eventos de input
-                const inputs = document.querySelectorAll('input, textarea');
-                inputs.forEach(input => {
-                    if (input.classList.contains('iluminacao-input')) {
-                        input.addEventListener('input', calculateIluminacaoSummary);
-                    }
-                });
-                // Event listeners para cálculos de água
-                document.getElementById('hidrometro20h').addEventListener('input', calcularConsumoAgua);
-                document.getElementById('hidrometro06h').addEventListener('input', calcularConsumoAgua);
-                document.getElementById('reservatorio20h').addEventListener('input', calcularDiferencaReservatorio);
-                document.getElementById('reservatorio06h').addEventListener('input', calcularDiferencaReservatorio);
                 
-                // Event listeners para cálculos do hidrômetro IFF
-                document.getElementById('hidrometroIff20h').addEventListener('input', calcularDiferencaHidrometroIff);
-                document.getElementById('hidrometroIff06h').addEventListener('input', calcularDiferencaHidrometroIff);
-                // Atualizar data e hora
+                // Atualizar data e hora atual
+                function updateDateTime() {
+                    const now = new Date();
+                    const options = {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit'
+                    };
+                    document.getElementById('currentDateTime').textContent = now.toLocaleDateString('pt-BR', options);
+                }
                 updateDateTime();
                 setInterval(updateDateTime, 1000);
-                // Botão Imprimir
-                document.querySelector('.btn-print').addEventListener('click', function() {
-                    console.log('Imprimindo relatório...');
+                
+                // Funções de cálculo
+                window.calcularConsumoAgua = function() {
+                    const inicio = parseFloat(document.getElementById('hidrometro08h').value) || 0;
+                    const fim = parseFloat(document.getElementById('hidrometro18h').value) || 0;
+                    const consumo = fim - inicio;
+                    document.getElementById('consumoAgua').value = consumo.toFixed(1);
+                };
+                
+                window.calcularDiferencaReservatorio = function() {
+                    const inicio = parseFloat(document.getElementById('reservatorio08h').value) || 0;
+                    const fim = parseFloat(document.getElementById('reservatorio18h').value) || 0;
+                    const diferenca = fim - inicio;
+                    document.getElementById('diferencaReservatorio').value = diferenca.toFixed(1);
+                };
+                
+                window.calcularDiferencaHidrometroIff = function() {
+                    const inicio = parseFloat(document.getElementById('hidrometroIffInicio').value) || 0;
+                    const fim = parseFloat(document.getElementById('hidrometroIffFim').value) || 0;
+                    const diferenca = fim - inicio;
+                    document.getElementById('hidrometroIffDiferenca').value = diferenca.toFixed(1);
+                };
+                
+                window.calcularConsumoHidrometroIffPrincipal = function() {
+                    const inicio = parseFloat(document.getElementById('hidrometroIffPrincipal08h').value) || 0;
+                    const fim = parseFloat(document.getElementById('hidrometroIffPrincipal18h').value) || 0;
+                    const consumo = fim - inicio;
+                    document.getElementById('hidrometroIffPrincipalConsumo').value = consumo.toFixed(1);
+                };
+                
+                window.calcularConsumoHidrometroEntradaPrincipal = function() {
+                    const inicio = parseFloat(document.getElementById('hidrometroEntradaPrincipal08h').value) || 0;
+                    const fim = parseFloat(document.getElementById('hidrometroEntradaPrincipal18h').value) || 0;
+                    const consumo = fim - inicio;
+                    document.getElementById('consumoHidrometroEntradaPrincipal').value = consumo.toFixed(1);
+                };
+                
+                window.calcularConsumoHidrometroSecundario = function() {
+                    const inicio = parseFloat(document.getElementById('hidrometroSecundario08h').value) || 0;
+                    const fim = parseFloat(document.getElementById('hidrometroSecundario18h').value) || 0;
+                    const consumo = fim - inicio;
+                    document.getElementById('consumoHidrometroSecundario').value = consumo.toFixed(1);
+                };
+                
+                window.calcularTodos = function() {
+                    calcularConsumoAgua();
+                    calcularDiferencaReservatorio();
+                    calcularDiferencaHidrometroIff();
+                    calcularConsumoHidrometroIffPrincipal();
+                    calcularConsumoHidrometroEntradaPrincipal();
+                    calcularConsumoHidrometroSecundario();
+                };
+                
+                // Event listeners para botões
+                document.querySelector('.btn-print').addEventListener('click', () => {
                     window.print();
                 });
-                // Botão Salvar Online
+                
                 document.querySelector('.btn-save').addEventListener('click', saveDataToFirestore);
-                // Botão Limpar
-                document.querySelector('.btn-clear').addEventListener('click', function() {
-                    if(confirm('Tem certeza que deseja limpar todo o formulário?')) {
-                        console.log('Limpando formulário...');
-                        document.querySelectorAll('input, textarea').forEach(function(element) {
-                            element.value = ''; // Limpa todos os campos
+                
+                document.querySelector('.btn-clear').addEventListener('click', () => {
+                    if (confirm('Tem certeza que deseja limpar todos os campos?')) {
+                        // Limpar todos os campos
+                        const inputs = document.querySelectorAll('input:not([readonly]), textarea');
+                        inputs.forEach(input => {
+                            if (input.type === 'number') {
+                                input.value = '';
+                            } else {
+                                input.value = '';
+                            }
                         });
-                        // Restaurar valores padrão para iluminação
-                        document.querySelectorAll('.iluminacao-input[type="number"]').forEach(input => {
-                            input.value = '0';
-                        });
-                        // Restaurar valores padrão para cálculos
-                        document.getElementById('hidrometro20h').value = '2854791.9';
-                        document.getElementById('hidrometro00h').value = '2854951.5';
-                        document.getElementById('hidrometro06h').value = '2855413.5';
-                        document.getElementById('reservatorio20h').value = '60202.3';
-                        document.getElementById('reservatorio06h').value = '60208.6';
-                        // Restaurar campo OM
-                        document.getElementById('omIluminacao').value = 'OM 94081';
+                        // Restaurar valores padrão específicos
+                        document.getElementById('reservatorio08h').value = '60202.3';
                         // Restaurar encarregado geral
                         document.getElementById('encarregado').value = '247 - DANIEL VIEIRA';
                         // Recalcular valores
@@ -2035,7 +1708,6 @@
             window.calcularConsumoAgua = calcularConsumoAgua;
             window.calcularDiferencaReservatorio = calcularDiferencaReservatorio;
             window.calcularDiferencaHidrometroIff = calcularDiferencaHidrometroIff;
-            window.calculateIluminacaoSummary = calculateIluminacaoSummary;
             // Atualizar matrículas automaticamente (opcional)
             window.updateMatriculas = function() {
                 ['encarregado', 'ofElet1', 'ofCivil1', 'auxElet1', 'ofElet2', 'ofCivil2', 'auxElet2', 'ofElet3', 'ofCivil3', 'auxElet3'].forEach(id => {
@@ -2057,81 +1729,6 @@
 </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        function updateDates() {
-            const today = new Date();
-            const currentHour = today.getHours();
-
-            let startDate = new Date(today);
-            let endDate = new Date(today);
-
-            // Se o horário atual for antes das 7h, o plantão que está terminando começou no dia anterior.
-            // Se o horário atual for depois das 19h, o plantão que está começando é o de hoje.
-            // Caso contrário, estamos no meio do dia, e o plantão a ser preenchido é o que terminou hoje de manhã.
-
-            if (currentHour < 7) {
-                // Estamos no dia seguinte ao início do plantão
-                startDate.setDate(today.getDate() - 1);
-                // A data final é hoje (quando o plantão termina)
-                endDate = new Date(today);
-            } else if (currentHour >= 19) {
-                // Estamos no dia do início do plantão
-                startDate = new Date(today);
-                // A data final é amanhã (quando o plantão termina)
-                endDate.setDate(today.getDate() + 1);
-            } else {
-                // Entre 7h e 19h - plantão que terminou hoje de manhã
-                // Início foi ontem, fim foi hoje
-                startDate.setDate(today.getDate() - 1);
-                endDate = new Date(today);
-            }
-
-            const dayNames = ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB'];
-
-            const formatDay = (date) => dayNames[date.getDay()];
-            const formatDate = (date) => {
-                const day = String(date.getDate()).padStart(2, '0');
-                const month = String(date.getMonth() + 1).padStart(2, '0');
-                const year = String(date.getFullYear()).slice(-2);
-                return `${day}/${month}/${year}`;
-            };
-
-            document.getElementById('startDate').value = formatDate(startDate);
-            document.getElementById('startDay').value = formatDay(startDate);
-            document.getElementById('endDate').value = formatDate(endDate);
-            document.getElementById('endDay').value = formatDay(endDate);
-        }
-
-        updateDates();
-    });
-</script>
-</body>
-</html>
 
 
 
